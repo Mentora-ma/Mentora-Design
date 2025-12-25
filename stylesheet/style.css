@@ -1,7 +1,7 @@
 /* --- DESIGN SYSTEM MENTORA - NE PAS MODIFIER --- */
 :root {
   --primary-dark: #261c50;
-  --secondary-color: #15a34a;
+  /* --secondary-color: #15a34a; */
   --header-bg: #7f9099;
   --bg-page: #f0f2f5;
   --text-dark: #333333;
@@ -206,7 +206,7 @@ header.top-banner {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("https://github.com/iman-11/image-host/blob/main/Mentora%20Design/Group.png?raw=true");
+  background-image: url("https://github.com/Mentora-ma/Mentora-Design/blob/main/icons/mentora_shadow.svg?raw=true");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
