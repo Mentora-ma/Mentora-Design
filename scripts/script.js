@@ -57,14 +57,13 @@ document.addEventListener("DOMContentLoaded", () => {
 function changeSlide(id, dir) {
   const container = document.getElementById(id);
   const track = container.querySelector(".slider-track");
-  if (!track) return; // specific safety check
+  if (!track) return;
   const slides = track.querySelectorAll(".content-slide");
   let activeIdx = Array.from(slides).findIndex((s) =>
     s.classList.contains("active-slide")
   );
 
   let newIdx = activeIdx + dir;
-  // Clamp index
   if (newIdx < 0) newIdx = 0;
   if (newIdx >= slides.length) newIdx = slides.length - 1;
 
@@ -106,7 +105,6 @@ function addSwipeSupport(el, id) {
   const track = el.querySelector(".slider-track");
   if (!track) return;
 
-  // Touch events for mobile
   el.addEventListener(
     "touchstart",
     (e) => {
@@ -196,41 +194,63 @@ function selectOption(el) {
   el.classList.toggle("selected");
 }
 
-function validateVraiFaux(containerId) {
-  const options = document.querySelectorAll(`#${containerId} .qcm-option`);
+function validateVraiFaux(activityId) {
+  const options = document.querySelectorAll(`#${activityId} .qcm-option`);
   let errors = 0;
+
   options.forEach((opt) => {
     const isSelected = opt.classList.contains("selected");
     const truth = opt.getAttribute("data-answer");
+
+    // Remove previous feedback classes
     opt.classList.remove("feedback-success", "feedback-error");
-    if (isSelected && truth === "Vrai") opt.classList.add("feedback-success");
-    else if (isSelected && truth === "Faux") {
-      opt.classList.add("feedback-error");
-      errors++;
-    } else if (!isSelected && truth === "Vrai") {
-      opt.classList.add("feedback-error");
-      errors++;
+
+    // Only apply feedback to SELECTED options
+    if (isSelected) {
+      if (truth === "Vrai") {
+        opt.classList.add("feedback-success");
+      } else if (truth === "Faux") {
+        opt.classList.add("feedback-error");
+        errors++;
+      }
+    } else {
+      // Count missing correct answers as errors, but DON'T highlight them
+      if (truth === "Vrai") {
+        errors++;
+      }
     }
   });
+
   showFeedback(
-    "feedback-" + containerId,
+    `feedback-${activityId}`,
     errors === 0,
-    errors === 0 ? "Excellent !" : "Certaines réponses sont incorrectes."
+    errors === 0
+      ? "Excellent ! Toutes les réponses sont correctes."
+      : "Certaines réponses sont incorrectes."
   );
 }
 
 function checkNumerical(inputId, correctVal, feedbackId, tolerance = 0.01) {
-  const val = parseFloat(document.getElementById(inputId).value);
+  const input = document.getElementById(inputId);
+  if (!input) return;
+  const val = parseFloat(input.value);
+  if (isNaN(val)) {
+    showFeedback(feedbackId, false, "Veuillez entrer une valeur numérique.");
+    return;
+  }
   const isCorrect = Math.abs(val - correctVal) <= tolerance;
   showFeedback(
     feedbackId,
     isCorrect,
-    isCorrect ? "Correct !" : "Réessayez, la valeur n'est pas exacte."
+    isCorrect
+      ? "Correct ! Bonne réponse."
+      : "Réessayez, la valeur n'est pas exacte."
   );
 }
 
 function showFeedback(id, isSuccess, msg) {
   const el = document.getElementById(id);
+  if (!el) return;
   el.className = isSuccess
     ? "feedback-container feedback-success"
     : "feedback-container feedback-error";
@@ -240,11 +260,13 @@ function showFeedback(id, isSuccess, msg) {
 
 function toggleHint(id) {
   const el = document.getElementById(id);
+  if (!el) return;
   el.style.display = el.style.display === "block" ? "none" : "block";
 }
 
 function toggleSol(id) {
   const el = document.getElementById(id);
+  if (!el) return;
   el.style.display = el.style.display === "block" ? "none" : "block";
   renderMathJax(el);
 }
