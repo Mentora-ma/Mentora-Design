@@ -1,6 +1,4 @@
 /* --- DESIGN SYSTEM MENTORA - ARABIC (RTL) --- */
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
-
 :root {
   --primary-dark: #261c50;
   /* --secondary-color: #15a34a; */
@@ -8,8 +6,8 @@
   --bg-page: #f0f2f5;
   --text-dark: #333333;
   --text-grey: #666666;
-  --font-serif: "Cairo", serif; /* Changed to Cairo for RTL compatibility */
-  --font-sans: "Cairo", sans-serif; /* Changed to Cairo for RTL compatibility */
+  --font-serif: "Ubuntu", serif; /* Changed to Cairo for RTL compatibility */
+  --font-sans: "ubuntu", sans-serif; /* Changed to Cairo for RTL compatibility */
   --radius-block: 25px;
   --radius-pill: 50px;
 }
