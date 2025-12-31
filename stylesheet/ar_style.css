@@ -41,7 +41,7 @@ body {
 
 header.top-banner {
   background: linear-gradient(
-    to left, /* Flipped gradient direction */
+    to right, /* Flipped gradient direction */
     var(--primary-dark),
     var(--secondary-color)
   );
@@ -51,6 +51,7 @@ header.top-banner {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row-reverse;
   gap: 40px;
   border-radius: var(--radius-block);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
