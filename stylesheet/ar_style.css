@@ -153,10 +153,10 @@ header.top-banner {
   pointer-events: none;
   background-image: url("https://github.com/iman-11/image-host/blob/main/Mentora%20Design/Group0.png?raw=true");
   margin-right: 0;
-  margin-left: 90px; /* Flipped margin */
+  margin-left: -150px; /* Flipped margin */
   background-repeat: no-repeat;
   background-position: left center; /* Flipped position */
-  background-size: contain;
+  /* background-size: contain; */
   opacity: 0.3;
   transform: scaleX(-1); /* Flip the image horizontally to match RTL flow */
 }
