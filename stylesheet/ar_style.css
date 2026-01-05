@@ -1,4 +1,5 @@
 /* --- DESIGN SYSTEM MENTORA - ARABIC (RTL) --- */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
 :root {
   --primary-dark: #261c50;
   /* --secondary-color: #15a34a; */
@@ -6,8 +7,8 @@
   --bg-page: #f0f2f5;
   --text-dark: #333333;
   --text-grey: #666666;
-  --font-serif: "Ubuntu", serif; /* Changed to Cairo for RTL compatibility */
-  --font-sans: "ubuntu", sans-serif; /* Changed to Cairo for RTL compatibility */
+  --font-serif: "Cairo", serif; /* Changed to Cairo for RTL compatibility */
+  --font-sans: "Cairo", sans-serif; /* Changed to Cairo for RTL compatibility */
   --radius-block: 25px;
   --radius-pill: 50px;
 }
@@ -74,7 +75,7 @@ header.top-banner {
 .title-box h1 {
   font-family: var(--font-serif);
   font-size: 2.2rem;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0px; /* Reduced spacing for Arabic */
   line-height: 1.1;
@@ -154,10 +155,10 @@ header.top-banner {
   pointer-events: none;
   background-image: url("https://github.com/iman-11/image-host/blob/main/Mentora%20Design/Group0.png?raw=true");
   margin-right: 0;
-  margin-left: -150px; /* Flipped margin */
+  margin-left: -200px; /* Flipped margin */
   background-repeat: no-repeat;
   background-position: left center; /* Flipped position */
-  /* background-size: contain; */
+  background-size: contain;
   opacity: 0.3;
   transform: scaleX(-1); /* Flip the image horizontally to match RTL flow */
 }
@@ -177,7 +178,7 @@ header.top-banner {
 
 .header-text h2 {
   font-size: 1.4rem;
-  font-weight: 800;
+  font-weight: 500;
   /* font-style: italic; Removed italic for Arabic usually */
   text-transform: uppercase;
   margin-bottom: 5px;
@@ -441,9 +442,9 @@ canvas {
   border-right: 4px solid var(--primary-dark); /* Flipped border */
   border-left: none;
   margin: 15px 0;
-  font-family: "Courier New", Courier, monospace;
-  direction: ltr; /* Formulas often look better LTR, but depends. keeping LTR for math is safer */
-  text-align: left;
+  /* font-family: "Courier New", Courier, monospace; */
+  /* direction: ltr; /* Formulas often look better LTR, but depends. keeping LTR for math is safer */
+  /* text-align: left; */
 }
 
 /* --- MEDIA QUERIES --- */
