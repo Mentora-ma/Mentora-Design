@@ -1,0 +1,593 @@
+/* --- DESIGN SYSTEM MENTORA - ARABIC (RTL) --- */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --primary-dark: #4a90e2;
+  --secondary-color: #cfe8f3;
+  --header-bg: #7f9099;
+  --bg-page: #ffffff;
+  --text-dark: #333333;
+  --text-grey: #666666;
+  --font-sans: "Cairo", sans-serif;
+  --radius-block: 25px;
+  --radius-pill: 50px;
+  --theorie-green: #609786;
+  --theorie-green-light: #b3d7c3;
+  --activity-purple: #b68cb7;
+  --activity-purple-light: #e7dae8;
+  --figma-blue-banner: #cfe8f3;
+  --figma-title-blue: #4a90e2;
+  --font-primary: "Cairo", sans-serif;
+  --font-secondary: "Cairo", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-sans);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-dark);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px 0;
+  direction: rtl;
+}
+
+.app-container {
+  width: 95%;
+  max-width: 1400px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 100px; /* Adds space so you can scroll enough to see the illustration fully */
+}
+
+.top-banner {
+  background-image: url("https://github.com/Mentora-ma/Mentora-Design/blob/main/illustrations/main_card_illustration2.svg?raw=true") !important;
+  background-color: var(--figma-blue-banner) !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: right !important;
+  min-height: 200px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  padding: 20px !important;
+  overflow: visible !important;
+  border-radius: var(--radius-block);
+}
+.header-decor-rainbow {
+  position: absolute !important;
+  right: 20px !important;
+  top: 20px !important;
+  width: 150px !important;
+}
+.illu-box {
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    max-height 0.4s ease-out;
+  max-height: 250px;
+  position: absolute;
+  left: -35px;
+  bottom: -20px;
+  z-index: 1;
+}
+
+.illu-box img {
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  margin-top: 20px;
+  width: 370px;
+}
+
+.title-box {
+  text-align: center;
+  position: relative !important;
+  z-index: 5 !important;
+  text-align: center !important;
+  flex: 1 !important;
+}
+.title-box h1 {
+  font-family: var(--font-secondary) !important;
+  color: var(--figma-title-blue) !important;
+  font-size: 4rem !important;
+  font-weight: 500 !important;
+  margin: 0 !important;
+  text-transform: uppercase !important;
+}
+.title-box p {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0px; /* Reduced for Arabic */
+  opacity: 0.9;
+}
+
+.main-content {
+  padding: 0;
+}
+
+.accordion-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.accordion-item {
+  background: transparent;
+}
+
+.accordion-header {
+  font-family: var(--font-primary);
+  width: 100%;
+  border: none;
+  min-height: 100px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+  padding: 20px 30px !important;
+  border-radius: var(--radius-block);
+}
+
+#accordion-theory .accordion-header {
+  background-color: var(--theorie-green);
+}
+#accordion-theory .btn {
+  background-color: var(--theorie-green-light);
+}
+#accordion-activity .accordion-header {
+  background-color: var(--activity-purple);
+}
+#accordion-activity .btn {
+  background-color: var(--activity-purple-light);
+}
+
+.accordion-item.active .accordion-header::before {
+  transform: scaleX(1);
+}
+
+.bg-bubbles {
+  position: absolute;
+  top: 0;
+  left: 0; /* FLIPPED */
+  bottom: 0;
+  width: 30%;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("https://github.com/iman-11/image-host/blob/main/Mentora%20Design/Group0.png?raw=true");
+  margin-left: -150px; /* FLIPPED */
+  background-repeat: no-repeat;
+  background-position: left center; /* FLIPPED */
+  background-size: contain;
+  opacity: 0.3;
+  transform: scaleX(-1); /* FLIPPED */
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  text-align: right; /* FLIPPED */
+  position: relative;
+  z-index: 2;
+}
+.icon-circle {
+  width: 60px;
+  font-size: 2.2rem;
+}
+
+.header-info {
+  font-family: var(--font-primary);
+  margin-left: 250px; /* FLIPPED */
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.header-text {
+  font-family: var(--font-primary) !important;
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+.header-text h2 {
+  font-family: var(--font-primary) !important;
+  font-size: 1.8rem;
+  font-weight: 900;
+  /* font-style: italic; Removed for Arabic */
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.header-text span {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.9;
+  max-width: 350px;
+  line-height: 1.3;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  position: relative;
+  z-index: 2;
+}
+.meta-data {
+  text-align: left; /* FLIPPED */
+  font-size: 1.2rem;
+  line-height: 1.3;
+  font-weight: 600;
+  margin-left: 150px; /* FLIPPED */
+}
+
+.arrow-wrapper {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://github.com/Mentora-ma/Mentora-Design/blob/main/icons/mentora_shadow.svg?raw=true");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.arrow-icon {
+  font-size: 1.1rem;
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.accordion-body {
+  font-family: var(--font-secondary);
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition:
+    max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.6s ease-in-out,
+    transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  background: white;
+  border-radius: var(--radius-block);
+  margin-top: -30px;
+  padding-top: 30px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+}
+.accordion-item.active .arrow-icon {
+  transform: rotate(180deg);
+}
+.accordion-item.active .accordion-body {
+  max-height: 2500px;
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: -25px;
+  margin-bottom: 20px;
+  padding-top: 45px;
+}
+
+.body-inner {
+  padding: 40px 50px;
+}
+.lesson-header {
+  font-family: var(--font-secondary) !important;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 10px;
+}
+#accordion-theory .lesson-num,
+#accordion-theory .lesson-title {
+  color: var(--theorie-green) !important;
+}
+#accordion-activity .lesson-num,
+#accordion-activity .lesson-title {
+  color: var(--activity-purple) !important;
+}
+.lesson-num {
+  font-weight: 300;
+}
+.lesson-title {
+  font-weight: 800;
+}
+.text-block {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-grey);
+  text-align: justify;
+  margin-bottom: 25px;
+}
+
+.nav-btns {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+  /* flex-direction: row-reverse; Optional for button order */
+}
+.btn {
+  /* background-color: var(--primary-dark); */
+  color: white;
+  padding: 12px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(38, 28, 80, 0.2);
+}
+.btn:hover {
+  background-color: #3e327a;
+  transform: translateY(-2px);
+}
+.btn:disabled {
+  background-color: #ccc !important;
+  color: #888 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Slider / Carousel Styles */
+.body-inner {
+  padding: 40px 50px;
+  overflow: hidden;
+  border: 2px solid;
+  border-radius: var(--radius-block);
+}
+
+#accordion-theory .body-inner,
+#accordion-theory .lesson-header {
+  border-color: var(--theorie-green-light) !important;
+}
+
+#accordion-activity .body-inner,
+#accordion-activity .lesson-header {
+  border-color: var(--activity-purple-light) !important;
+}
+.slider-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.3s ease-out;
+  will-change: transform;
+}
+
+.content-slide {
+  display: block;
+  width: 100%;
+  flex-shrink: 0;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.content-slide.active-slide {
+  opacity: 1;
+}
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.qcm-option {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  border: 2px solid #e9ecef;
+  transition: all 0.2s;
+  font-weight: 500;
+  text-align: center;
+}
+.qcm-option:hover {
+  background: #e2e6ea;
+  border-color: var(--secondary-color);
+}
+.qcm-option.selected {
+  border-color: var(--primary-dark);
+  background-color: #e3e3ff;
+}
+.qcm-option.feedback-success {
+  background-color: #d4edda;
+  border-color: #28a745;
+  color: #155724;
+}
+.qcm-option.feedback-error {
+  background-color: #f8d7da;
+  border-color: #dc3545;
+  color: #721c24;
+}
+
+.feedback-container {
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 15px;
+  display: none;
+  font-weight: 500;
+  border-right: 5px solid; /* FLIPPED */
+  border-left: none; /* Reset */
+}
+.feedback-success {
+  background-color: #d4edda;
+  color: #155724;
+  border-color: #28a745;
+}
+.feedback-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-color: #dc3545;
+}
+.feedback-hint {
+  background-color: #fff3cd;
+  color: #856404;
+  border-color: #ffc107;
+}
+
+.solution-container {
+  background: #f1f3f5;
+  border-right: 4px solid var(--primary-dark); /* FLIPPED */
+  border-left: none; /* Reset */
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  display: none;
+}
+
+.input-styled {
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  width: 120px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.canvas-container {
+  text-align: center;
+  margin: 20px 0;
+  background: #fff;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+.formula-box {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  border-right: 4px solid var(--primary-dark); /* FLIPPED */
+  border-left: none; /* Reset */
+  margin: 15px 0;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* --- FOOTER ILLUSTRATION STYLES --- */
+
+.bg-illu {
+  position: fixed;       /* Fixes the div to the viewport */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;           /* Places it behind the .app-container */
+  pointer-events: none; /* Ensures clicks pass through to any underlying elements if needed */
+  display: flex;
+  align-items: flex-end; /* Aligns the image strictly to the bottom */
+  justify-content: center;
+  line-height: 0;       /* Removes any default text spacing below the image */
+}
+
+.bg-illu .illu {
+  width: 50%;
+  height: auto;
+  /* max-height: 40vh;     Restricts height so it doesn't cover the whole screen on small laptops */
+  object-fit: cover;    /* Ensures the image spans the width without distortion */
+  display: block;
+}
+
+/* --- MEDIA QUERIES CRITIQUES - NE PAS TOUCHER - NE PAS RESUMER --- */
+@media (max-width: 900px) {
+  header.top-banner {
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    min-height: unset;
+  }
+  .illu-box img {
+    display: none;
+  }
+  .activity-illu {
+    display: none;
+  }
+  .bg-bubbles {
+    display: none;
+  }
+  .app-container {
+    width: 95%;
+  }
+  .meta-data {
+    display: none;
+  }
+  .header-text span {
+    display: none;
+  }
+  .body-inner {
+    padding: 20px;
+  }
+  .header-info {
+    display: none;
+  }
+  .accordion-header {
+    padding: 15px 25px;
+    min-height: 0;
+  }
+  .header-left {
+    gap: 20px;
+  }
+  .header-text h2 {
+    font-size: 1.2rem;
+  }
+  .arrow-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+  .title-box h1 {
+    font-size: 1.6rem;
+  }
+  /* INTERACTION: HIDE ILLUSTRATION ON MOBILE WHEN ACTIVE */
+  body.accordion-active .illu-box {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+    pointer-events: none;
+    max-height: 0;
+  }
+  .doodles-container {
+    display: none;
+  }
+  .bg-illu .illu {
+    max-height: 20vh;
+  }
+}
+/* --- DÉCORATIONS (IMAGE PLACEMENTS) --- */
+.doodles-container {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.doodles-img {
+  max-width: 100%;
+  height: auto;
+}
