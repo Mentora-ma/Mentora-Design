@@ -591,3 +591,218 @@ canvas {
   max-width: 100%;
   height: auto;
 }
+
+/* --- NEW ACTIVITY STYLES (ADDED) --- */
+
+/* MEMORY GAME */
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+    perspective: 1000px;
+}
+.memory-card {
+    background-color: transparent;
+    height: 120px;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+.memory-card.flipped, .memory-card.matched {
+    transform: rotateY(180deg);
+}
+.memory-card .front, .memory-card .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.memory-card .front {
+    background: linear-gradient(135deg, var(--activity-purple), #9b72a5);
+    color: white;
+    font-size: 2rem;
+}
+.memory-card .back {
+    background-color: white;
+    color: var(--text-dark);
+    border: 2px solid var(--activity-purple);
+    transform: rotateY(180deg);
+}
+.memory-card.matched .back {
+    background-color: #d4edda;
+    border-color: #28a745;
+}
+
+/* DRAG AND DROP */
+.drag-drop-container {
+    margin: 20px 0;
+    touch-action: none; /* Prevent scroll while dragging on touch */
+}
+.source-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+    justify-content: center;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 15px;
+}
+.draggable-item {
+    background: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 2px solid var(--activity-purple);
+    cursor: grab;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    z-index: 10;
+}
+.draggable-item:active {
+    cursor: grabbing;
+}
+.draggable-item.dragging {
+    opacity: 0.5;
+    transform: scale(1.1);
+}
+.draggable-item.correct {
+    background-color: #d4edda;
+    border-color: #28a745;
+    color: #155724;
+}
+.draggable-item.wrong {
+    background-color: #f8d7da;
+    border-color: #dc3545;
+    color: #721c24;
+}
+.target-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.drop-zone {
+    flex: 1;
+    min-width: 150px;
+    min-height: 150px;
+    border: 3px dashed #ccc;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255,255,255,0.5);
+    transition: background 0.3s;
+    font-weight: bold;
+    color: var(--text-grey);
+}
+.drop-zone.drag-over {
+    background: #e9ecef;
+    border-color: var(--primary-dark);
+}
+
+/* LINKING GAME */
+.linking-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 20px 0;
+    min-height: 300px;
+}
+.linking-container canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+.col-left, .col-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 2;
+    gap: 30px;
+}
+.link-node {
+    background: white;
+    padding: 15px 30px;
+    border-radius: 15px;
+    border: 3px solid var(--secondary-color);
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s;
+    position: relative;
+    min-width: 80px;
+}
+.link-node:hover {
+    transform: scale(1.05);
+    border-color: var(--primary-dark);
+}
+.link-node.selected {
+    background-color: var(--primary-dark);
+    color: white;
+    border-color: var(--primary-dark);
+    box-shadow: 0 0 15px rgba(74, 144, 226, 0.5);
+}
+
+/* SORTING GAME */
+.sortable-list {
+    list-style: none;
+    padding: 0;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.sortable-list li {
+    background: white;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.05);
+}
+.sortable-list li.correct {
+    border-color: #28a745;
+    background-color: #f1fff4;
+}
+.sortable-list li.wrong {
+    border-color: #dc3545;
+    background-color: #fff1f2;
+}
+.sort-controls {
+    display: flex;
+    gap: 5px;
+}
+.sort-controls button {
+    background: var(--bg-page);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: var(--text-dark);
+}
+.sort-controls button:hover {
+    background: var(--secondary-color);
+}
