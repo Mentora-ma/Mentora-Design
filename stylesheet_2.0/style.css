@@ -259,7 +259,7 @@ body:has(.accordion.open) .dots-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("https://cdn.jsdelivr.net/gh/Mentora-ma/Mentora-Design@main/icons/mentora_shadow.svg");
+  background-image: url("https://cdn.jsdelivr.net/gh/Mentora-ma/Mentora-Design@main/icons/mentora_shadow.svg"); 
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
