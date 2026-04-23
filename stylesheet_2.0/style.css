@@ -1,6 +1,6 @@
 /* --- DESIGN SYSTEM MENTORA - NE PAS MODIFIER --- */
 :root {
-  --primary-dark: #261c50;
+  /* --primary-dark: #EBC365; */
   /* --secondary-color: #15a34a; */
   --header-bg: #7f9099;
   --bg-page: #f0f2f5;
@@ -39,14 +39,10 @@ body {
 }
 
 header.top-banner {
-  background: linear-gradient(
-    to right,
-    var(--primary-dark),
-    var(--secondary-color)
-  );
-  padding: 30px 80px;
+  background: #CDECFC;
+  padding: 30px 40px;
   color: white;
-  height: 206px;
+  height: 250px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,16 +50,30 @@ header.top-banner {
   border-radius: var(--radius-block);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   position: relative;
+  background-image: url("https://cdn.jsdelivr.net/gh/Mentora-ma/Mentora-Design@main/illustrations/nature.svg");
+  background-position: center bottom;
+  background-repeat: no-repeat;
 }
 
 .illu-box {
   transition: opacity 0.4s ease, transform 0.4s ease, max-height 0.4s ease-out;
-  max-height: 250px;
+  /* max-height: 250px; */
+}
+
+img.hero-sun {
+  position: absolute;
+  left: 86%;
+  top: 33%;
+  height: 50%;
+  width: auto;
+  max-width: 25%;
+  z-index: 0;
 }
 
 .illu-box img {
   object-fit: contain;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  width: 100%;
 }
 
 .title-box {
@@ -101,7 +111,7 @@ header.top-banner {
 .accordion-header {
   font-family: var(--font-sans);
   width: 100%;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-dark);
   border: none;
   border-radius: var(--radius-pill);
   padding: 20px 40px;
@@ -213,11 +223,11 @@ body:has(.accordion.open) .dots-icon {
 }
 
 .header-text h2 {
-  font-size: 1.4rem;
+  font-size: 2.3rem;
   font-weight: 800;
-  font-style: italic;
   text-transform: uppercase;
   margin-bottom: 5px;
+  color: var(--secondary-color);
 }
 .header-text span {
   display: block;
@@ -334,7 +344,7 @@ body:has(.accordion.open) .dots-icon {
   box-shadow: 0 5px 15px rgba(38, 28, 80, 0.2);
 }
 .btn:hover {
-  background-color: #3e327a;
+  background-color: var(--secondary-color);
   transform: translateY(-2px);
 }
 .btn:disabled {
